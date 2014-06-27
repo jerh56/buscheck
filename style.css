@@ -17,11 +17,11 @@ header, section, footer, aside, nav, article, figure, figcaption, hgroup{
 }
 
 body {
-	text-align: center;
+	text-align: left;
 }
 
 #grupo_cajas {
-	width: 200px;
+	width: 400px;
 	margin: 15px auto;
 	text-align: left;
 }
@@ -56,13 +56,14 @@ body {
 }
 #pie {
 	clear: both;
-	text-align: center;
+	text-align: left;
 	padding: 20px;
 	border-top: 2px solid #999999;
 
 }
 #map_canvas {
-	height: 200px;
+	height: 400px;
+	width: 400px;
 	border: 2px;
 	border-color: #fff;
 	background-color: #fff;
