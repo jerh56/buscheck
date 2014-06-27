@@ -21,7 +21,7 @@ body {
 }
 
 #grupo_cajas {
-	width: 960px;
+	width: 200px;
 	margin: 15px auto;
 	text-align: left;
 }
@@ -62,7 +62,7 @@ body {
 
 }
 #map_canvas {
-	height: 400px;
+	height: 200px;
 	border: 2px;
 	border-color: #fff;
 	background-color: #fff;
