@@ -1,25 +1,13 @@
 var myLatLng;
 var myLatLng2;
- var gl = navigator.geolocation;
-    
-    var latitude;
-    var longitude;
-    var marker;
-    var map;
+var gl = navigator.geolocation;
+var latitude;
+var longitude;
+var marker;
+var map;
 
 function initializar() {
   
-  
-
-  //navigator.geolocation.getCurrentPosition(function(position) {
-      //var pos = new google.maps.LatLng(position.coords.latitude,
-  //                                     position.coords.longitude);
-                                       
-  //var myLatLng = new google.maps.LatLng(24.800, 252.600);
-  //var myLatLng2 = new google.maps.LatLng(24.780, 252.600);
-
-   
-    
     gl.getCurrentPosition(
         function (position) {
             latitude = position.coords.latitude;
@@ -127,11 +115,9 @@ function colocaMarcador(data){
     marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
 }
 
-google.maps.event.addDomListener(window, 'load', initializar);
+function realizarSuscripcion(){
+ 
+}
 
-//$('#localizar').on('click',function(e){
-  //      e.preventDefault();
-    //    revisarPosicion();
-//    });
-    
+google.maps.event.addDomListener(window, 'load', initializar);
     
