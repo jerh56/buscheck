@@ -6,77 +6,54 @@ var longitude;
 var marker;
 var map;
 
-function initializar() {
+$(document).ready(function() {
+		inicializar();
+});
+
+
+
+
+
+
+function inicializar() {
   
-    gl.getCurrentPosition(
-        function (position) {
-            latitude = position.coords.latitude;
-            longitude = position.coords.longitude;
-        //alert("lat " + latitude);
-        
-         myLatLng = new google.maps.LatLng(latitude,longitude);
-         myLatLng2 = new google.maps.LatLng(latitude, longitude);
-        var mapOptions = {
-          //center: new google.maps.LatLng(24.800, 252.600),
-          center: new google.maps.LatLng(latitude, longitude),
-          zoom: 13,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        
-        
-        
-        
-      map = new google.maps.Map(document.getElementById("map_canvas"),
-            mapOptions);
-            
-            marker = new google.maps.Marker({
-      position: myLatLng2,
-      map: map,
-      title: 'Usted esta aqui!',
-      draggable: true
-      });
+  var Geo={};
+			  var options = { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
 
-  var infowindow = new google.maps.InfoWindow({
-    content: 'Cambia de posicion el marcador y luego  <a href="#">Haz click</a> aqui ',
-    position: myLatLng
-  });
-  infowindow.open(map, marker);
+			        if (navigator.geolocation) {
+			           navigator.geolocation.watchPosition(success, error, options);
+			        }
 
-  google.maps.event.addListener(map, 'zoom_changed', function() {
-    var zoomLevel = map.getZoom();
-    //alert("zoom");
-    map.setCenter(myLatLng);
-    infowindow.setContent('Zoom: ' + zoomLevel);
-  });
+			        //Get the latitude and the longitude;
+			        function success(position) {
+			            Geo.lat = position.coords.latitude;
+			            Geo.lng = position.coords.longitude;
+			            populateHeader(Geo.lat, Geo.lng);
+			        }
 
+			        function error(){
+			            console.log("Geocoder failed");
+			        }
 
-// Permito los eventos drag/drop sobre el marcador
-  google.maps.event.addListener(marker, 'dragstart', function() {
-    updateMarker('Arrastrando...');
-  });
+			        function populateHeader(lat, lng){
+			            $('#Lat').html("Latitud: " + lat);
+			            $('#Long').html("Longitud: " + lng);
 
-            
-        },
-        function (error) {
-            alert("Error getting geolocation:" + error);
-        }
-    );
+			            $('#Lat').val(lat);
+			            $('#Long').val(lng);
+			        }
     
-  google.maps.event.addListener(marker, 'drag', function() {
-    //updateMarkerStatus('Arrastrando...');
-   // updateMarkerPosition(marker.getPosition());
-   //infowindow.setPosition(marker.getPosition()) ;
-   infowindow.setContent('Arrastrando ');
-  //document.form_mapa.latitud.value = latLng.lat();
-  });
- 
-  google.maps.event.addListener(marker, 'dragend', function() {
-    //updateMarkerStatus('Arrastre finalizado');
-    //geocodePosition(marker.getPosition());
-    infowindow.setContent('Arrastre finalizado <a href="#">Haz click</a>');
-  });
 
-}
+};
+
+
+
+
+
+
+
+
+
 
 function updateMarker(location) {
         marker.setPosition(location);
@@ -119,5 +96,5 @@ function realizarSuscripcion(){
  
 }
 
-google.maps.event.addDomListener(window, 'load', initializar);
+//google.maps.event.addDomListener(window, 'load', initializar);
     
