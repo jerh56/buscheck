@@ -4,7 +4,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta charset="UTF-8">
     
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
@@ -30,11 +30,7 @@
           <header>
             <h1></h1>
           </header>
-            <h1 id="Lat">Esperando Latitud... </h1>
-        	  <h1 id="Long">Esperando Longitud... </h1>
-            <input type="button" id="localizar" value = "localizar transporte" onclick="revisarPosicion();">
-            <input type="button" id="notificar" value = "Recibir notificaciones" onclick="realizarSuscripcion();">
-            <div id="map_canvas"></div>
+            
             
           <footer>
             <p></p>
@@ -49,15 +45,21 @@
     
     <div data-role="page" id="pageone">
   <div data-role="header">
-    <h1>Insert Page Title Here</h1>
+    <h1>Bus Check</h1>
   </div>
 
   <div data-role="main" class="ui-content">
-    <p>Insert Content Here</p>
+    <p>
+      <h1 id="Lat">Esperando Latitud... </h1>
+        	  <h1 id="Long">Esperando Longitud... </h1>
+            <input type="button" id="localizar" value = "localizar transporte" onclick="revisarPosicion();">
+            <input type="button" id="notificar" value = "Recibir notificaciones" onclick="realizarSuscripcion();">
+            <div id="map_canvas"></div>
+    </p>
   </div>
 
   <div data-role="footer">
-    <h1>Insert Footer Text Here</h1>
+    <h1>Johnny</h1>
   </div>
 </div> 
   </body>
