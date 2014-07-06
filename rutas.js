@@ -5,6 +5,7 @@ var latitude;
 var longitude;
 var marker;
 var map;
+var bMap = false;
 
 $(document).ready(function() {
 		inicializar();
@@ -42,29 +43,26 @@ function inicializar() {
 			            $('#Lat').val(lat);
 			            $('#Long').val(lng);
 			            
-			            
-			            
-			             myLatLng = new google.maps.LatLng(lat,lng);
-				         myLatLng2 = new google.maps.LatLng(lat, lng);
-				        var mapOptions = {
+			            myLatLng = new google.maps.LatLng(lat,lng);
+				    myLatLng2 = new google.maps.LatLng(lat, lng);
+			            if (!bMap){
+			              
+				      var mapOptions = {
 				          //center: new google.maps.LatLng(24.800, 252.600),
 				          center: new google.maps.LatLng(lat, lng),
 				          zoom: 13,
 				          mapTypeId: google.maps.MapTypeId.ROADMAP
 				        }
-        
-        
-        
-        
-					      map = new google.maps.Map(document.getElementById("map_canvas"),
-					            mapOptions);
-					            
-					      marker = new google.maps.Marker({
-					        position: myLatLng2,
-					        map: map,
-					        title: 'Usted esta aqui!',
-					        draggable: true
-      					  });
+        			      map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+				      bMap = true; 	            
+			            }            
+				
+				    marker = new google.maps.Marker({
+				        position: myLatLng2,
+				        map: map,
+				        title: 'Usted esta aqui!',
+				        draggable: true
+      				    });
 			            
 			            
 			        }
