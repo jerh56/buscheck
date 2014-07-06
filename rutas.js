@@ -59,7 +59,7 @@ function updateMarker(location) {
         marker.setPosition(location);
         //updateMarkerPosition(location);
         geocodePosition(location);
-      }
+      };
 
 function revisarPosicion() {      
 
@@ -77,7 +77,7 @@ $.ajax({
         //alert(JSON.stringify(data));
         colocaMarcador(data); 
     });
-}      
+};      
 
 function colocaMarcador(data){
      var latitude = data.contextElement.attributes[1].value;
@@ -90,11 +90,11 @@ function colocaMarcador(data){
       title: 'El transporte esta aqui!'
     });
     marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
-}
+};
 
 function realizarSuscripcion(){
  
-}
+};
 
 //google.maps.event.addDomListener(window, 'load', initializar);
     
