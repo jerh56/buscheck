@@ -55,18 +55,22 @@ function inicializar() {
 				        }
         			      map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 				      bMap = true; 	            
-			            }            
-				
-				    marker = new google.maps.Marker({
+			             marker = new google.maps.Marker({
 				        position: myLatLng2,
 				        map: map,
 				        title: 'Usted esta aqui!',
 				        draggable: true
-      				    });
+      				      });
 			            
+			            }            
+				
+				    //marker.setMap(null);
+				    
+			             marker.setPosition(myLatLng2);
+			             map.setCenter(myLatLng2);
 			            
 			        }
-    
+			       
 
 };
 
