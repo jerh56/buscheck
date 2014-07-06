@@ -16,32 +16,7 @@
     <script src="rutas.js"></script>
   </head>
   <body>
-    <div id="grupo_cajas">
-      <header id="header_prin">
-        <hgroup>
-          <h1>Bus Check</h1>
-        </hgroup>
-      </header>
-      <nav id="menu_nav">
-        
-      </nav> 
-      <section id="seccion">
-        <article>
-          <header>
-            <h1></h1>
-          </header>
-            
-            
-          <footer>
-            <p></p>
-          </footer>
-        </article>  
-      </section>
-     
-      <footer id="pie">
-        
-      </footer> 
-    </div>
+   
     
     <div data-role="page" id="pageone">
   <div data-role="header">
@@ -54,15 +29,22 @@
         	  <h1 id="Long">Esperando Longitud... </h1>
             <input type="button" id="localizar" value = "localizar transporte" onclick="revisarPosicion();">
             <input type="button" id="notificar" value = "Recibir notificaciones" onclick="realizarSuscripcion();">
+                
             
     </p>
-    <div width ="100%" id="map_canvas" heigth ="400 px"></div>
+    <p> <a href="#map_canvas">Ver Mapa</a>  </p>
+    
   </div>
   
 
   <div data-role="footer">
     <h1>Johnny</h1>
   </div>
+  
+  <div data-role="page"  id="map_canvas">
+    
+  </div>
+  
 </div> 
   </body>
 
