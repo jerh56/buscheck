@@ -41,6 +41,32 @@ function inicializar() {
 
 			            $('#Lat').val(lat);
 			            $('#Long').val(lng);
+			            
+			            
+			            
+			             myLatLng = new google.maps.LatLng(lat,lng);
+				         myLatLng2 = new google.maps.LatLng(lat, lng);
+				        var mapOptions = {
+				          //center: new google.maps.LatLng(24.800, 252.600),
+				          center: new google.maps.LatLng(lat, lng),
+				          zoom: 13,
+				          mapTypeId: google.maps.MapTypeId.ROADMAP
+				        }
+        
+        
+        
+        
+					      map = new google.maps.Map(document.getElementById("map_canvas"),
+					            mapOptions);
+					            
+					      marker = new google.maps.Marker({
+					        position: myLatLng2,
+					        map: map,
+					        title: 'Usted esta aqui!',
+					        draggable: true
+      					  });
+			            
+			            
 			        }
     
 
