@@ -61,6 +61,13 @@ function inicializar() {
 				        title: 'Usted esta aqui!',
 				        draggable: true
       				      });
+      				      
+      				      var infowindow = new google.maps.InfoWindow({
+					    content: 'Usted está <a href="#">aquí</a>',
+					    position: myLatLng
+					  });
+					  infowindow.open(map, marker);
+      				      
 			            
 			            }            
 				
